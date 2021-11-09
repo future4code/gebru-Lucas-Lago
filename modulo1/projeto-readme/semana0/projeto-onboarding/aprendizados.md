@@ -1,0 +1,5 @@
+# Aprendizados da semana
+
+Nesta semana aprendi a como utilizar o **terminal do git bash** para navegação entre diretórios (cd ./ ; cd ../), leitura de arquivos no diretório (ls), criação de diretórios (mkdir), criação de arquivos vazios (touch) e como edita-los com algum editor, ex. VScode (code), como alterar nome de pastas e arquivos com o comando mv, como copiar (cp), mover (mv) e deletar arquivos e diretórios (rm -r), como ler arquivos no próprio terminal (cat), e como utilizar os comando (head; tail; grep) dentro de um arquivo txt.
+
+Também foi ensinado como utilizar comandos **git no terminal**, como criar uma branch (git branch nome-repo), a utilização do comando git add, como comitar repositórios (git commit -m), como enviar seus arquivos para o github (git push origin) e realizar um pull Request para que outras pessoas, mediante autorização, possam conferir os arquivos desenvolvidos. Além disto, também foi ensinado como atualizar o repositório local (git pull origin repo), além de outros comando para navegação entre branch's, git checkout branch, entre outros comandos (git status e git branch)
