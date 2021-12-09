@@ -104,7 +104,7 @@ function retornaSegundoMaiorESegundoMenor(array) {
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
-  const chamadoDoFilme = {
+  chamadoDoFilme = {
     nome: 'O Diabo Veste Prada',
     ano: 2006,
     diretor: 'David Frankel',
@@ -114,7 +114,18 @@ function retornaChamadaDeFilme(filme) {
 }
 // EXERCÍCIO 12
 function retornaPessoaAnonimizada(pessoa) {
-   
+  // objeto = {
+  //   nome: "Astrodev",
+  //   idade: 25,
+  //   email: "astrodev@labenu.com.br",
+  //   endereco: "Rua do Futuro, 4"
+  // }
+
+  objeto = {
+    ...pessoa,
+    nome: "ANÔNIMO"
+  }
+  return objeto
 }
 
 // EXERCÍCIO 13A
