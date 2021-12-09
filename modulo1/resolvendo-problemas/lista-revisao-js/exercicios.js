@@ -26,18 +26,14 @@ function retornaArrayOrdenado(array) {
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-  const arrayPar = []
-  for (let i = 0; i < array.length; i++){
-    if (array[i] % 2 === 0){
-      arrayPar.push(array[i])
-    }
-  }
-  return arrayPar
+  numeroPar = array.filter(pares => (pares % 2) === 0 )
+  return numeroPar
 }
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
- 
+  const arrayParElevado = []
+
 }
 
 // EXERCÍCIO 06
