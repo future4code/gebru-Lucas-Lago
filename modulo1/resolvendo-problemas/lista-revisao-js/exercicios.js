@@ -32,13 +32,19 @@ function retornaNumerosPares(array) {
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
-  const arrayParElevado = []
-
+  numerosPares = array.filter(paresElevado => (paresElevado % 2) === 0 )
+    
 }
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
-  
+  let maior = -Infinity
+  for (let i = 0; i < array.length; i++){
+    if (array[i] > maior){
+      maior = array[i]
+    }
+  }
+  return maior
 }
 
 // EXERCÍCIO 07
