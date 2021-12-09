@@ -33,7 +33,11 @@ function retornaNumerosPares(array) {
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
   numerosPares = array.filter(paresElevado => (paresElevado % 2) === 0 )
-    
+  
+  numerosParesElevado = numerosPares.map((numero) => {
+    return Math.pow(numero, 2)
+  }) 
+  return numerosParesElevado
 }
 
 // EXERCÍCIO 06
@@ -49,7 +53,12 @@ function retornaMaiorNumero(array) {
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
-
+  // objeto = {
+  //   maiorNumero: ,
+  //   maiorDivisivelPorMenor: ,
+  //   diferenca: 
+  // }  
+  
 }
 
 // EXERCÍCIO 08
@@ -59,11 +68,37 @@ function retornaNPrimeirosPares(n) {
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
-
+  const equilatero = ladoA === ladoB === ladoC
+  const isosceles = ladoA===ladoB!==ladoC || ladoA===ladoC!==ladoB || ladoB===ladoC!==ladoA
+  const escaleno = ladoA !== ladoB !== ladoC
+  
+  if (equilatero){
+    return "Equilátero"
+  } else if (isosceles){
+    return "Isósceles"
+  } else if (escaleno){
+    return "Escaleno"
+  }
 }
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
+
+  // Função coloca o array em ordem crescente
+  function colocarEmOrdem(a, b){
+    return a - b
+  }
+  const arrayEmOrdem = array.sort(colocarEmOrdem)
+
+  arrayEmOrdem.pop()
+  arrayEmOrdem.shift()
+  
+  const arrayEmOrdemFinal =[]
+  arrayEmOrdemFinal.push(arrayEmOrdem[0])
+  arrayEmOrdem.reverse()
+  arrayEmOrdemFinal.push(arrayEmOrdem[0])
+  arrayEmOrdemFinal.reverse()
+  return arrayEmOrdemFinal
   
 }
 
