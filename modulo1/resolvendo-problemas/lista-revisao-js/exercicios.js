@@ -63,13 +63,19 @@ function retornaObjetoEntreDoisNumeros(num1, num2) {
     maiorDivisivelPorMenor: divisivel,
     diferenca: diferenca
   }
-
   return objeto
 }
 
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {
-   
+  const arrayPar = []
+
+  for (let i = 0; arrayPar.length < n; i++){
+    if (i % 2 === 0){
+      arrayPar.push(i)
+    }
+  }
+  return arrayPar
 }
 
 // EXERCÍCIO 09
