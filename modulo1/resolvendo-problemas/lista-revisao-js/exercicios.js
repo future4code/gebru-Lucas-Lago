@@ -94,23 +94,22 @@ function classificaTriangulo(ladoA, ladoB, ladoC) {
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
-
   // Função coloca o array em ordem crescente
   function colocarEmOrdem(a, b){
     return a - b
-  }
+  }   
   const arrayEmOrdem = array.sort(colocarEmOrdem)
-
-  arrayEmOrdem.pop()
-  arrayEmOrdem.shift()
-  
-  const arrayEmOrdemFinal =[]
-  arrayEmOrdemFinal.push(arrayEmOrdem[0])
   arrayEmOrdem.reverse()
-  arrayEmOrdemFinal.push(arrayEmOrdem[0])
-  arrayEmOrdemFinal.reverse()
-  return arrayEmOrdemFinal
-  
+  const tamanho = arrayEmOrdem.length - 1
+
+  if (tamanho < 2){
+    return arrayEmOrdem.reverse()
+  } else {
+    arrayEmOrdem.pop()
+    arrayEmOrdem.shift()
+    arrayEmOrdem.splice(1, arrayEmOrdem.length - 2)
+  }
+  return  arrayEmOrdem
 }
 
 // EXERCÍCIO 11
