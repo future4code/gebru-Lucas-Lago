@@ -1,0 +1,47 @@
+Exercício de fixação do conhecimento
+
+São 7 passos que nos ajudam a facilitar a interpretação e o 
+desenvolvimento do código.
+
+1º Passo - Ter atenção no enunciado
+
+	Serve para identificar informações necessárias no enunciado
+	para aplicação no código;
+
+2º Passo - Retirar informações relevantes
+	
+	Serve para separar dados importantes para o código, como 
+	criação de variáveis, funções e condições para existência
+	do código.
+
+3º Passo - Pensar nas Entradas e Saídas
+
+	Serve para pensar em possíveis implementações no código,
+	(exemplo: preciso gerar a saída banana, qual entrada meu
+	código precisa para gerar tal saída).
+
+4º Passo - Fazer um esquema visual
+	
+	Quando mais complexo o código, mais elementos ele terá, 
+	para ajudar no desenvolvimento do código, você pode optar
+	pela realização de um esquema visual, como por exemplo 
+	um fluxograma, ele vão te ajudar a enxergar as saídas e 
+	consequentemente as entradas.
+
+5º Passo - Criar um código feio
+
+	Este passo serve para você colocar no editor seu código, 
+	não importando o tamanho e nem se esta formatado e bonitinho,
+	o importante aqui é conseguir fazer ele funcionar para todas
+	as soluções.
+
+6º Passo - Testar: Força-Bruta
+	
+	Transcrever o código para uma linguagem de programação, algo
+	que o computador vá entender melhor.
+
+7º Passo - Refatorar
+
+	Este passo serve para deixar o código mais bonito, arrumando 
+	os nomes de variáveis, separando as funções e deixar mais 
+	apresentável.
