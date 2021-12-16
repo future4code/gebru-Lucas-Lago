@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Animaleiro</title>
-    <link rel="stylesheet" type="text/css" href="index.CSS">
+    <link rel="stylesheet" type="text/css" href="pagina-de-venda.css">
 </head>
 <body>
-
 <!--========================================================================================================================================-->
 <!--CABEÇALHO-->
     <header class="cabecalho">
@@ -24,25 +23,32 @@
         <a class="abas" href="ctrl-estoque.html">Controle de Estoque</a>
         <a class="abas" href="add-produto.html">Adicionar Produto</a>
         <a class="abas" href="funcionarios.html">Funcionários</a>
+        <a class="abas" href="pagina-de-venda.html">Carrinho</a>
+        <a class="abas" href="pagina-de-historico-de-vendas.html">Histórico de Vendas</a>
     </div>
 
 <!--========================================================================================================================================-->
-<!-- TEXTO -->
-    <div><br>
-        <h2>Introdução</h2>
-            Animaleiro é uma loja criada para proporsionar uma melhor qualidade de vida para o seu pet. Nossa loja tem o objetivo de 
-            proporcionar uma experiência unica para você e seu pet!
+<!-- Página de Vendas -->
+    <h2>Carrinho</h2>
+    <form action="##">
+        <div>
+            <label for="produto">Produto:</label>
+            <input type="url" id="produto" name="produto">
+        </div>
 
-        <h3>Objetivo</h3>
-            <!-- Colocar OBJETIVO -->
-
-        <h3>Valores</h3>
-            <!-- Colocar VALORES -->
-
-        <h3>Visão</h3>
-            <!-- Colocar Visão -->
-
-    </div>
+        <div>
+            <h4>Tipo de pagamento:</h4>
+            <label for="cartao">Cartão</label>
+            <input type="checkbox" id="cartao" name="cartao">
+            <label for="dinheiro">Dinheiro</label>
+            <input type="checkbox" id="dinheiro" name="dinheiro">
+        </div>
+        <br>
+        <div>
+            <label for="finalizar-compra">Finalizar compra</label>
+            <input type="submit" id="finalizar-compra" name="finalizar-compra">
+        </div>
+    </form>
     <br>
 
 <!--========================================================================================================================================-->
