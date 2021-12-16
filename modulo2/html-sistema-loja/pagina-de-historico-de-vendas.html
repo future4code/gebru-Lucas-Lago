@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Animaleiro</title>
+    <link rel="stylesheet" type="text/css" href="pagina-de-venda.css">
+</head>
+<body>
+<!--========================================================================================================================================-->
+<!--CABEÇALHO-->
+    <header class="cabecalho">
+        <img src="Imagens/Logo.png" alt="Imagem de cabeçalho" class="img"/>
+        <h1 class="titulo-principal"><em>Animaleiro</em></h1>
+        <P> A casa do seu pet maneiro!</P>
+    </header>
+
+<!--========================================================================================================================================-->
+<!-- ABAS -->
+    <div>
+        <a class="abas" href="index.html">Página Inicial</a>
+        <a class="abas" href="ctrl-estoque.html">Controle de Estoque</a>
+        <a class="abas" href="add-produto.html">Adicionar Produto</a>
+        <a class="abas" href="funcionarios.html">Funcionários</a>
+        <a class="abas" href="pagina-de-venda.html">Carrinho</a>
+        <a class="abas" href="pagina-de-historico-de-vendas.html">Histórico de Vendas</a>
+    </div>
+
+<!--========================================================================================================================================-->
+<!-- Página histórico de Vendas -->
+    <h2>Histórico de Vendas</h2>
+    <form action="###">
+        <div>
+            <label for="venda">Venda Número:</label>
+            <input type="search" id="venda" name="venda">
+        </div><br>
+        
+        <div>
+            <label for="funcionario">Nome do Funcionario:</label>
+            <input type="search" id="funcionario" name="funcionario">
+            <label for="horario">Horário da Venda:</label>
+            <input type="datetime-local" id="horario" name="horario">
+        </div> <br>
+
+        <div>
+            <label for="valor-da-compra">Total:</label>
+            <input type="number" id="valor-da-compra" name="valor-da-compra">
+        </div> <br>
+
+        <div>
+            <h4>Forma de pagamento:</h4>
+            <label for="cartao">Cartão</label>
+            <input type="checkbox" id="cartao" name="cartao">
+            <label for="dinheiro">Dinheiro</label>
+            <input type="checkbox" id="dinheiro" name="dinheiro">
+        </div>
+    </form>
+    <br>
+
+<!--========================================================================================================================================-->
+<!--RODAPÉ-->
+    <!--Cria um rodapé na página-->
+    <footer class="rodape">
+        
+        <!--Cria uma linha horizontal na página, lincada ao CSS-->
+        <div id="linha-horizontal"></div>
+        
+        <!--Imagens das redes sociais-->
+        <div>
+            <p class="redes-sociais">Siga-nos nas redes sociais!</p>
+            <div>
+                <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
+                <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white"/>
+                <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/>
+                <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"/>
+            </div>
+        </div>
+    </footer>
+<!--========================================================================================================================================-->
+
+</body>
+</html>
