@@ -59,7 +59,13 @@ div img {
 .icone {
     height: 15px;
 }
-
+#texto-container{
+    display: block; 
+    width: 20%;
+    text-align: center;
+    justify-items: center;
+    padding-left: 40%;
+}
 
 /** 
   *
