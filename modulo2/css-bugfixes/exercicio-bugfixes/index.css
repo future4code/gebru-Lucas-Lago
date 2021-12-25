@@ -34,7 +34,9 @@ div>p:first-child {
 }
 
 div img {
-    background: black;
+    background: rgb(255, 255, 255);
+    width: 20%;
+    text-align: center;
 }
 
 .botao-amarelo {
