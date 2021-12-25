@@ -118,11 +118,15 @@ td button {
     color: black;
 }
 
+#border-text{
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+}
 .container-do-search {
     margin-top: 20px;
     height: 100px;
 }
-
 
 #back-button {
     background-color: white;
