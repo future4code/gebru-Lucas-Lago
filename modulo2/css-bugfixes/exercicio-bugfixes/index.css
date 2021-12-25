@@ -137,3 +137,8 @@ td button {
 #back-button:hover {
     background-color: #635a3d
 }
+
+td button:hover{
+    color: white;
+    background-color: #635a3d;
+}
