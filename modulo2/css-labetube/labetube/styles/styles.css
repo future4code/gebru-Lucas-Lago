@@ -7,7 +7,7 @@
 body{
     background-color: white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 25px;
+    font-size: 100%;
 }
 
 /* ================================================= */
@@ -21,14 +21,14 @@ body{
     background-color: #0C0248;
     color: white;
 
-    height: 80px;
-    width: 100%;
+    padding: 1%;
+    width: auto;
 
 }
 
 /* TITULO-CABEÇALHO */
 .titulo-h1{
-    padding-left: 40px;
+    padding-left: 4rem;
 }
 
 /* CAIXA DE PESQUISA */
@@ -37,25 +37,30 @@ body{
     justify-content: center;
     align-items: center;
 
-    padding-right: 40px;
+    padding-right: 3em;
 }
 #img-pesquisa{
-    height: 40px;
+    height: 2em;
     padding-left: 10px;
 }
 #busca{
-    width: 400px;
-    height: 40px;
+    width: 12em;
+    height: 10%;
     font-size: 25px;
 }
 
 /* ================================================= */
 /* === CORPO DO TEXTO === */
+.container-principal{
+    box-sizing: border-box;
+}
 .container-imagens{
     display: grid;
 
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
+
+    max-width: 100%;
 
 }
 
@@ -76,8 +81,8 @@ body{
 }
 
 .img-videos{
-    width: 400px;
-    height: 550px;
+    width: 10em;
+    height: 18em;
 }
 
 
@@ -117,8 +122,8 @@ body{
 }
 
 .img-contato-formato{
-    height: 50px;
-    width: 200px;
+    height: 5em;
+    width: 10em;
 }
 
 /* ============================================================================== */
@@ -144,3 +149,39 @@ body{
     padding: 30px;
 }
 
+
+@media screen and (max-device-width: 600px){
+    .container-cabecalho{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        padding: 10px;
+    }
+
+    .caixa-de-busca{
+        padding-left: 140px;
+    }
+
+    .container-imagens{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: replace(1fr);
+        flex-wrap: nowrap;
+    }
+
+    .container-rodape{
+        width: 100%;
+    }
+    .img-redes-sociais{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .img-contato-formato{
+        height: 40px;
+    }
+}
