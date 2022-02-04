@@ -15,6 +15,8 @@ const ContainerGeral = styled.div`
   align-items: center;
 `
 const FeedMensagem = styled.div`
+  display: flex;
+  flex-direction: column;
   height: auto;
   min-height: 500px;
   width:  60%;
@@ -41,6 +43,51 @@ const CampoMensagem = styled.input`
   width: 200px;
   border-radius:  4px;
 `
+const BalaoDeMensagem = styled.div`
+  background-color: ${props => {
+    if (props.tipo === "eu") {
+      return "#DDF7C8" // Verde copiado do WhatsApp
+    } else if (props.tipo === "outro") {
+      return "#ffffff" // Branco
+    }
+  }};
+  align-self:  ${props => {
+    if (props.tipo === "eu") {
+      return "flex-end"
+    } else {
+      return "flex-start"
+    }
+  }};
+  margin-right: ${props => {
+    if (props.tipo === "eu") {
+    return "1%"
+    }
+  }};
+  margin-left: ${props => {
+    if (props.tipo !== "eu") {
+      return "1%"
+    }
+  }};
+  max-width: 60%;
+  min-width: 8%;
+  margin-bottom: 1em;
+  word-wrap: break-word;
+
+  padding: 0.9em 0.8em;
+  border-radius: 0.5em;
+  font-weight: 450;
+  line-height: 1.3;
+
+  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
+`
+const ContainerNome = styled.div`
+  color: #9AAC8C;
+  font-size: 0.8em;
+  font-weight: 600;
+  margin-bottom: 0.2em;
+`
+
+
 // =========================================================
 
 class App extends React.Component {
@@ -70,41 +117,37 @@ class App extends React.Component {
     const copia = [...this.state.listaUsuario, NewMensagem]
       this.setState({ listaUsuario: copia})
       this.setState({ inputUsuario: '', inputMensagem: ''})
-    }
+  }
 
-  render(){
-
-    const usuarios = this.state.listaUsuario.map((usuario) => {
-      return (
-        <div key={usuario.id}>
-          {usuario.nomeUsuario}
-          {usuario.mensagemUsuario} 
-        </div>
-      )
-    })
-
-    // const nome = this.props.inputUsuario.toLowerCase()
-    //   if( nome === 'eu'){
-    //     return(
-    //       <div>{this.props.inputMensagem}</div>
-    //     )
-    //   } else {
-    //     <div>
-    //       <div>{this.props.inputUsuario}</div>
-    //       <div>{this.props.inputMensagem}</div>
-    //     </div>
-    //   }
     
 
-
+  render(){
+    
+    const usuarios = this.state.listaUsuario.map((usuario) => {
+      const nome = usuario.nomeUsuario.toLowerCase()
+      if(nome === "eu" && usuario.id !== 1){
+        return (
+          <BalaoDeMensagem tipo={'eu'}>
+            <div>{usuario.mensagemUsuario}</div>
+          </BalaoDeMensagem>
+        )
+      } else if(usuario.id !== 1) {
+        return(
+          <BalaoDeMensagem tipo={"outro"}>
+            <ContainerNome>{usuario.nomeUsuario}</ContainerNome> <br/>
+            <div>{usuario.mensagemUsuario}</div>
+          </BalaoDeMensagem>
+        )
+      }
+    })
+    
     return (
       <ContainerGeral>
           <Header>
           <h1> WhatsLab</h1>
           </Header>
           <FeedMensagem>
-          {usuarios}
-          {/* {tabelaDeDados} */}
+            {usuarios}
           </FeedMensagem>
           <CampoEnviarMensagem>
             <CampoUsuario
@@ -118,7 +161,6 @@ class App extends React.Component {
               onChange={this.guardaMensagem}
             />
             <button onClick={this.addMensagem}> Enviar </button>
-            
           </CampoEnviarMensagem>   
       </ContainerGeral>
     );
