@@ -3,6 +3,8 @@
 import React from "react";
 import axios from "axios";
 
+import {TitleSignUp, ContainerSignUp} from "./StylesSignUpScreen"
+
 // =============================================================================================
 // Componente de Classe
 class SignUpScreen extends React.Component{
@@ -41,15 +43,15 @@ class SignUpScreen extends React.Component{
     render(){
         return(
             <div>
-                <h2> Criar PlayList Personalizada!</h2>
-                <div>
+                <TitleSignUp> Criar PlayList Personalizada!</TitleSignUp>
+                <ContainerSignUp>
                     <input
                         placeholder='Nome da PlayList'
                         value={this.state.inputName}
                         onChange={this.handleNameInput}
                     />
                     <button onClick={this.createPlaylist}> Criar PlayList </button>
-                </div>
+                </ContainerSignUp>
                 <button onClick={this.props.goToUserListScreen}> Minhas Playlists </button>
             </div>
         )

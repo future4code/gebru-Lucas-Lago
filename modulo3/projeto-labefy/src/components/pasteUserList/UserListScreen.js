@@ -3,14 +3,15 @@
 import React from "react";
 import axios from "axios";
 
-import InfoScreen from "../pasteInfo/InfoScreen"
+import {CardPlaylist, ButtonInfo, DivDireita, ButtonDelet, TitlePage, TitlePlaylist, Playlist} from "./StyledsUserListScreen"
+import InfoScreen from "../pasteInfo/InfoScreen";
 
 // =============================================================================================
 // Componente de Classe
 class UserListScreen extends React.Component{
     state = {
         musicPlaylist: [],
-        info: 'false'
+        playlistId: ''
     }
 
     componentDidMount(){
@@ -52,48 +53,29 @@ class UserListScreen extends React.Component{
             .catch(err => alert('Erro ao apagar Playlist!'))
     }
 
-    // =============================================================================================
-    // Abre a página de informações da Playlist
-    infoScreen = () => {
-        switch(this.state.info){
-            case 'true':
-                return (
-                <InfoScreen
-                    
-
-
-                />)
-            case 'false': 
-                return <UserListScreen/>
-            default:
-                return 'Esta playlist não possui informações!'
-        }
-    }
-
-    goToInfoScreen = () => {
-        this.setState({ info: 'true' })
-    }
-
     render(){
         const renderedUsersPlaylist = this.state.musicPlaylist.map((playList) => {
             return (
-                <div key={playList.id}> 
-                    <p> {playList.name} </p>
-                    <button onClick={this.goToInfoScreen}> Info </button>
-                    <button onClick={() => this.deletePlaylist(playList.id)}> Apagar {playList.name}</button>
-                </div>
+                <CardPlaylist key={playList.id}>
+                    
+                    <TitlePlaylist> {playList.name} </TitlePlaylist>
+                    <DivDireita>
+                        <ButtonInfo onClick={this.props.goToInfoScreen}> + </ButtonInfo>
+                        <ButtonDelet onClick={() => this.deletePlaylist(playList.id)}> Apagar Playlist {playList.name}</ButtonDelet>
+                    </DivDireita>
+                </CardPlaylist>
             )
         })
 
         return(
             <div>
                 <button onClick={this.props.goToSignUpScreen}> Adicionar PlayList </button>
-                
-                <h2> Minhas Playlists </h2>
-            
-                {renderedUsersPlaylist}
-                
-                
+                <div>
+                    <TitlePage> Minhas Playlists </TitlePage>
+                    <Playlist>
+                        {renderedUsersPlaylist}
+                    </Playlist>
+                </div>
             </div>
         )
     }

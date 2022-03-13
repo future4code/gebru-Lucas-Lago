@@ -3,11 +3,12 @@
 import React from "react";
 
 // importando os componentes de Tela
-import MenuLateral from "./components/pasteMenuLateral/MenuLateral";
+import Header from "./components/pasteHeader/Header";
 
 //Importando as telas
 import SignUpScreen from "./components/pasteSignUp/SignUpScreen";
 import UserListScreen from "./components/pasteUserList/UserListScreen";
+import InfoScreen from "./components/pasteInfo/InfoScreen";
 
 // =============================================================================================
 // Componente de Classe
@@ -24,8 +25,10 @@ class App extends React.Component{
       case 'signUp':
         return <SignUpScreen goToUserListScreen={this.goToUserListScreen}/>
       case 'usersList':
-        return <UserListScreen goToSignUpScreen={this.goToSignUpScreen}/>
-      default:
+        return <UserListScreen goToSignUpScreen={this.goToSignUpScreen} goToInfoScreen={this.goToInfoScreen}/>
+      case 'info': 
+        return <InfoScreen  goToUserListScreen={this.goToUserListScreen}/>
+      default: 
         return alert('Página não encontrada!')
     }
   }
@@ -38,16 +41,17 @@ class App extends React.Component{
   goToUserListScreen = () => {
     this.setState({ renderedScreen: 'usersList' })
   }
+  // Função que envia para a página Info
+  goToInfoScreen = () => {
+    this.setState({ renderedScreen: 'info'})
+  }
 
   // =============================================================================================
   render(){
     return(
       <div>
-        {/* <MenuLateral/> */}
+        <Header/>
         {this.chooseScreen()}
-
-        
-        
       </div>
     )
   }
