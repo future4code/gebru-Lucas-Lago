@@ -6,7 +6,7 @@ export const LayoutCardScreen = styled.div`
     justify-content: space-between;
     align-items: center; 
     
-    width: 30%;
+    width: 560px;
     border: 1px solid black;
     box-shadow: 2px 2px gray;
     border-radius: 2%;
@@ -23,16 +23,18 @@ export const HeaderCard = styled.div`
 
     width: 100%;
     border-bottom: 1px solid gray;
+    border-radius: 2%;
+    background-color: yellowgreen;
 `
 
 export const LayoutButton = styled.button`
-    background-color: white;
+    background-color: yellowgreen;
     border: none;
 
     padding: 20px;
     height: 100%;
 
     &:hover{
-        background-color: gray;
+        background-color: whitesmoke;
     }
 `

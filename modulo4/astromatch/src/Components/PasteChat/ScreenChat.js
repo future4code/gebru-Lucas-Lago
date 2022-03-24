@@ -8,8 +8,7 @@ import {LayoutCardScreen, HeaderCard, LayoutButton} from "../PasteStyledScreen/S
 // Função da ScreenChat
 function ScreenChat(props){
     // useStates para a ScreenChat
-    const [arrayMatch, setArrayMatch] = useState([])
-    const [aluno, setAluno] = useState('Lucas')
+    const [arrayMatch, setArrayMatch] = useState({})
 
     // useEffect retornando a função getProfileToChoose, que retorna um perfil que ainda não foi visto 
     // por você e ela é chamada sempre que um aluno entrar na página;
@@ -17,18 +16,21 @@ function ScreenChat(props){
         getMatches()
     }, [])
     
-    const getMatches = (aluno) => {
+    const getMatches = () => {
         const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/lucas-lago-gebru/matches`
 
         axios
             .get(url)
             .then((res) => {
                 setArrayMatch(res.data)
+                console.log(res.data)
             })
             .catch((err) => {
                 alert(err.data)
             })
     }
+    console.log(arrayMatch)
+
     return(
         <LayoutCardScreen>
             <HeaderCard>
@@ -37,7 +39,7 @@ function ScreenChat(props){
                 <div></div>
             </HeaderCard>
             <div>
-                
+                {arrayMatch.photo}
             </div>
         </LayoutCardScreen>
     )

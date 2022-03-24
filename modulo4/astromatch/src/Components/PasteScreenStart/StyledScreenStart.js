@@ -6,7 +6,7 @@ export const LayoutCard = styled.div`
     justify-content: space-between;
     align-items: flex-start;
 
-    width: 90%;
+    width: 500px;
     height: 65%;
 
     padding: 10px;
@@ -59,4 +59,10 @@ export const ContainerButton = styled.div`
     padding: 10px;
     width: 90%;
     height: 10%;
+`
+
+export const ImagemMatch = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;    
 `

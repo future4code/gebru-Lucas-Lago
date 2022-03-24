@@ -4,17 +4,10 @@ import axios from "axios";
 
 // Importando Layout da página
 import {LayoutCardScreen, HeaderCard, LayoutButton} from "../PasteStyledScreen/StyledScreen"
-import {LayoutCard, ContainerInfo, ContainerButton} from "./StyledScreenStart"
+import {LayoutCard, ContainerInfo, ContainerButton, ImagemMatch} from "./StyledScreenStart"
 
 // Função Da ScreenStart
 function ScreenStart(props){
-    // useStates para a ScreenStart
-    // const [characterId, setcharacterId] = useState(1)
-    // const [characterPhoto, setcharacterPhoto] = useState('')
-    // const [characterAge, setcharacterAge] = useState('')
-    // const [characterName, setcharacterName] = useState('')
-    // const [characterBio, setcharacterBio] = useState('')
-
     const [profileId, setProfileId] = useState({})
 
     // useEffect retornando a função getProfileToChoose, que retorna um perfil que ainda não foi visto 
@@ -30,27 +23,16 @@ function ScreenStart(props){
         axios
             .get(url)
             .then((res) => {
-                // setcharacterId(res.data.profile.id)
-                // setcharacterPhoto(res.data.profile.photo)
-                // setcharacterAge(res.data.profile.age)
-                // setcharacterName(res.data.profile.name)
-                // setcharacterBio(res.data.profile.bio)
-                // console.log(res.data)
-                setProfileId(res.data)
+                setProfileId(res.data.profile)
+                
             })
             .catch((err) => {
                 // alert(err)
                 console.log(err)
             })
     }
-    
-    const arrayProfile = profileId.map((item) => {
-        return(
-            <div>
-                
-            </div>>
-        )
-    })
+    console.log(profileId)
+
     // Função de Match, chamada sempre que o botão de 'OK' é acionado, ela invoca a função getProfileToChoose 
     // novamente, que procura um novo perfil na API. E invoca a função choosePerson, que diz quem você deu Match.
     const getIdMatch = () => {
@@ -67,12 +49,16 @@ function ScreenStart(props){
         const url = `https://us-central1-missao-newton.cloudfunctions.net/astroMatch/lucas-lago-gebru/choose-person`
 
         const body = {
-            id: characterId,
+            id: profileId.id,
             choise: true
         }
 
         axios
-            .post(url, body)
+            .post(url, body, {
+                headers: {
+                    ContentType: application/json
+                }
+            })
             .then((res) => {
                 console.log('ENVIADO')
             })
@@ -90,20 +76,20 @@ function ScreenStart(props){
             </HeaderCard>
         
             <LayoutCard>
-                <div>
-                    <img src={characterPhoto}/>
-                </div>
+                <ImagemMatch>
+                    <img className="ImagemMatch" src={profileId.photo}/>
+                </ImagemMatch>
                 <ContainerInfo>
-                    <p className="NameMatch"> <strong> {characterName} </strong>, {characterAge} </p>
-                    <p className="BioMatch" > {characterBio} </p>
+                    <p className="NameMatch"> <strong> {profileId.name} </strong>, {profileId.age} </p>
+                    <p className="BioMatch" > {profileId.bio} </p>
                 </ContainerInfo>  
-            </LayoutCard>
+            </LayoutCard>                  
             
             <ContainerButton>
                 <button className="button1" onClick={getUnmatch}> X </button>
                 <button className="button2" onClick={getIdMatch}> OK </button>
             </ContainerButton>
-        </LayoutCardScreen> 
+        </LayoutCardScreen>
     )
 }
 export default ScreenStart
