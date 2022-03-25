@@ -63,6 +63,6 @@ export const ContainerButton = styled.div`
 
 export const ImagemMatch = styled.div`
     display: flex;
-    justify-content: center;
-    align-items: center;    
+    justify-items: center;
+    align-self: center;
 `

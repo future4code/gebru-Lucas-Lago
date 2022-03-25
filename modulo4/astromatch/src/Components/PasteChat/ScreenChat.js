@@ -4,11 +4,12 @@ import axios from "axios";
 
 // Importando Layout da página
 import {LayoutCardScreen, HeaderCard, LayoutButton} from "../PasteStyledScreen/StyledScreen"
+import {CardChat} from "./StyledScreenChat"
 
 // Função da ScreenChat
 function ScreenChat(props){
     // useStates para a ScreenChat
-    const [arrayMatch, setArrayMatch] = useState({})
+    const [arrayMatch, setArrayMatch] = useState([1])
 
     // useEffect retornando a função getProfileToChoose, que retorna um perfil que ainda não foi visto 
     // por você e ela é chamada sempre que um aluno entrar na página;
@@ -22,14 +23,26 @@ function ScreenChat(props){
         axios
             .get(url)
             .then((res) => {
-                setArrayMatch(res.data)
-                console.log(res.data)
+                setArrayMatch(res.data.matches)
+                console.log(res.data)  
             })
             .catch((err) => {
                 alert(err.data)
             })
     }
-    console.log(arrayMatch)
+
+    const arrayMatchCard = arrayMatch.map((item) => {
+        return(
+            <div key={item.id}> 
+                <img 
+                    src={item.photo}
+                    width="40px"
+                    height="40px"
+                />
+                <p> {item.name} </p>
+            </div>
+        )
+    })
 
     return(
         <LayoutCardScreen>
@@ -38,9 +51,9 @@ function ScreenChat(props){
                 <h1> AstroMatch </h1>
                 <div></div>
             </HeaderCard>
-            <div>
-                {arrayMatch.photo}
-            </div>
+            <CardChat>
+                {arrayMatchCard}
+            </CardChat>
         </LayoutCardScreen>
     )
 }

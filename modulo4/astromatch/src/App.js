@@ -36,7 +36,9 @@ function App() {
           ContentType: 'application/json'
         }
       })
-      .then((res) => res)
+      .then((res) => {
+        alert(`Dados limpados com SUCESSO!`)
+      })
       .catch((err) => {
         alert(err.data)
       })

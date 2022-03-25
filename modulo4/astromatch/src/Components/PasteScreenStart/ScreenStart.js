@@ -23,15 +23,13 @@ function ScreenStart(props){
         axios
             .get(url)
             .then((res) => {
-                setProfileId(res.data.profile)
-                
+                setProfileId(res.data.profile)  
             })
             .catch((err) => {
-                // alert(err)
-                console.log(err)
+                alert(err)
             })
     }
-    console.log(profileId)
+
 
     // Função de Match, chamada sempre que o botão de 'OK' é acionado, ela invoca a função getProfileToChoose 
     // novamente, que procura um novo perfil na API. E invoca a função choosePerson, que diz quem você deu Match.
@@ -50,13 +48,12 @@ function ScreenStart(props){
 
         const body = {
             id: profileId.id,
-            choise: true
+            choise: 'true' 
         }
-
         axios
             .post(url, body, {
                 headers: {
-                    ContentType: application/json
+                    ContentType: 'application/json'
                 }
             })
             .then((res) => {
@@ -66,7 +63,8 @@ function ScreenStart(props){
                 alert(err.data)
             })
     }
-        
+    console.log(profileId.id)  
+
     return(
         <LayoutCardScreen>
             <HeaderCard>
@@ -77,7 +75,11 @@ function ScreenStart(props){
         
             <LayoutCard>
                 <ImagemMatch>
-                    <img className="ImagemMatch" src={profileId.photo}/>
+                    <img 
+                        src={profileId.photo}
+                        width='300px'
+                        height='300px'
+                    />
                 </ImagemMatch>
                 <ContainerInfo>
                     <p className="NameMatch"> <strong> {profileId.name} </strong>, {profileId.age} </p>
