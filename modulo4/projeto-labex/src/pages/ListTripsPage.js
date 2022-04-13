@@ -1,19 +1,42 @@
 import react from "react"
-import {ContainerTripPage, ContainerButtonPage, ContainerButton, ContanerTitle} from "./StyledPages/StyledListTripPage"
+import { useNavigate } from "react-router-dom";
+
+import {useRequestData} from "../Hooks/useRequestData"
+import {BaseUrlApi} from "../Constants/Urls"
+
+import {goToApplicationFormPage, goToBackPage} from "../Routes/Coodinator"
+import {ContainerTripPage, ContainerButtonPage, ContainerButton, ContanerTitle, ContainerListTrips} from "./StyledPages/StyledListTripPage"
+
 function ListTripsPage(){
+    const navigate = useNavigate()
+    const data = useRequestData(`${BaseUrlApi}`) 
+
+    console.log(data)
+
+    // const arrayListTrips = data.map((item) => {
+    //     const name = item.name
+    //     return(
+    //         console.log(name)
+    //     )
+    // })
+
+    // console.log(arrayListTrips)
+
+     
+
     return(
         <ContainerTripPage>
             <ContainerButtonPage>
-                <ContainerButton> <b> INSCREVA-SE </b> </ContainerButton>
-                <ContainerButton> <b> VOLTAR </b> </ContainerButton>
+                <ContainerButton onClick={() => goToApplicationFormPage(navigate)}> <b> INSCREVA-SE </b> </ContainerButton>
+                <ContainerButton onClick={() => goToBackPage(navigate)}> <b> VOLTAR </b> </ContainerButton>
             </ContainerButtonPage>
             <div>
                 <ContanerTitle>
                     <h2> ListTripsPage </h2>
                 </ContanerTitle>
-                <div>
-                container lista
-                </div> 
+                <ContainerListTrips>
+                    teste
+                </ContainerListTrips> 
             </div>
              
         </ContainerTripPage>

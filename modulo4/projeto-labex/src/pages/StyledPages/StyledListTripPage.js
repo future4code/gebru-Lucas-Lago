@@ -51,3 +51,15 @@ export const ContanerTitle = styled.div`
     border: 1px solid gray;
     box-shadow: 1px 1px gray;
 `
+
+export const ContainerListTrips = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 700px;
+    margin: 30px;
+
+    border: 1px solid gray;
+    box-shadow: 1px 1px gray;
+`

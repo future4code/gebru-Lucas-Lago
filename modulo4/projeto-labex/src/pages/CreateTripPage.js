@@ -1,45 +1,92 @@
-import react from "react"
+import react, {useState} from "react"
+import axios from "axios"
+import {useNavigate} from "react-router-dom"
+
+import {useProtectedPage} from "../Hooks/useProtectedPage"
+import {goToBackPage} from "../Routes/Coodinator"
+
+import {ContainerGeral, ContainerInput, ContainerTitle, ContainerInputNomeData, ContainerInputDestinoDescricaoDuracao, 
+        ContainerInputData, ContainerInputInduvidual, ContainerInputNome, ContainerButton, ContainerButtonIndividual} 
+        from "./StyledPages/StyledCreateTripPage"
 
 function CreateTripPage(){
+    const navigate = useNavigate()
+    useProtectedPage()
+
+
+
+    const [nomeViagem, setNomeViagem] = useState('')
+    const [dataViagem, setDataViagem] = useState('')
+    const [destinoViagem, setDestinoViagem] = useState('')
+    const [descricaoViagem, setDescricaoViagem] = useState('')
+    const [duracaoViagem, setDuracaoViagem] = useState('')
+
+    const mudaNome = (e) => {
+        setNomeViagem(e.target.value)
+    }
+    const mudaData = (e) => {
+        setDataViagem(e.target.value)
+    }
+    const mudaDestino = (e) => {
+        setDestinoViagem(e.target.value)
+    }
+    const mudaDescricao = (e) => {
+        setDescricaoViagem(e.target.value)
+    }
+    const mudaDuracao = (e) => {
+        setDuracaoViagem(e.target.value)
+    }
+    
+    
+
+
     return(
-        <div>
-            <div>
-                <div>
-                    <h2> CreateTripPage </h2>
-                </div>
-                <div>
-                    <input
+        <ContainerGeral>
+            <ContainerInput>
+                <ContainerTitle>
+                    <h2>
+                        CreateTripPage
+                    </h2>  
+                </ContainerTitle>
+                <ContainerInputNomeData>
+                    <ContainerInputNome
                         type="text"
                         placeholder="Nome"
+                        value={nomeViagem}
+                        onChange={mudaNome}
                     />
-                    <input
+                    <ContainerInputData
                         type="date"
+                        value={dataViagem}
+                        onChange={mudaData}
                     />
-                </div>
-                <div>
-                    <input
+                </ContainerInputNomeData>
+                <ContainerInputDestinoDescricaoDuracao>
+                    <ContainerInputInduvidual
                         type="text"
                         placeholder="Destino"
+                        value={destinoViagem}
+                        onChange={mudaDestino}
                     />
-                </div>
-                <div>
-                    <input
+                    <ContainerInputInduvidual
                         type="text"
                         placeholder="Descrição"
+                        value={descricaoViagem}
+                        onChange={mudaDescricao}
                     />
-                </div>
-                <div>
-                    <input
+                    <ContainerInputInduvidual
                         type="text"
                         placeholder="Duração"
+                        value={duracaoViagem}
+                        onChange={mudaDuracao}
                     />
-                </div>   
-            </div>
-            <div>
-                <button> VOLTAR </button>
-                <button> CRIAR </button>
-            </div>
-        </div>
+                </ContainerInputDestinoDescricaoDuracao>   
+            </ContainerInput>
+            <ContainerButton>
+                <ContainerButtonIndividual onClick={() => goToBackPage(navigate)}> <b> VOLTAR </b> </ContainerButtonIndividual>
+                <ContainerButtonIndividual> <b> CRIAR </b> </ContainerButtonIndividual>
+            </ContainerButton>
+        </ContainerGeral>
     )
 }
 
