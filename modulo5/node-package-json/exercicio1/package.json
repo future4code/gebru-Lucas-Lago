@@ -1,14 +1,14 @@
 {
   "name": "package-json",
   "version": "1.0.0",
-  "description": "Aula de node package json",
-  "main": "index.js",
+  "description": "Exercício 1",
+  "main": "exercicio1.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "clear && node ./index.js"
+    "start": "clear && node ./exercicio1.js"
   },
-  "keywords": ["aula", "node", "package-json"],
+  "keywords": ["Exercicio 1"],
   "author": "Lucas Coimbra",
   "license": "ISC"
 }
