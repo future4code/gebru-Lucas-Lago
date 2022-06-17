@@ -1,16 +1,16 @@
 {
-  "dependencies": {
-    "typescript": "^4.7.2"
-  },
   "name": "intro-typescript",
   "version": "1.0.0",
+  "description": "Introdução ao TypeScript",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "tsc && node ./build/index.js"
   },
-  "keywords": ["intro", "typescript"],
+  "keywords": ["Intrudoção", "typescript"],
   "author": "Lucas Coimbra",
   "license": "ISC",
-  "description": ""
+  "dependencies": {
+    "typescript": "^4.7.3"
+  }
 }
