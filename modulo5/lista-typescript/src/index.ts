@@ -1,14 +1,12 @@
 
-// Exercício 1
 
-function frase(
-    nome: string,
-    data: string
-) :string {
+import { getNameOfDeclaration } from 'typescript'
+import {frase} from './exercicio1'
+import {funcaoImprime} from './exercicio2'
+import {catalogoFilmes} from './exercicio3'
+import {pessoasSelecionadas} from './exercicio4'
 
-    const separador: any = /\s*;\s*/
-
-    const arrayData: string[] = data.split(separador)
-
-    return console.log(`Olá, me chamo ${nome}, nasci no dia ${arrayData[0]} do mês de ${arrayData[1]} do ano de ${arrayData[2]}`)
-}
+frase('Lucas', '03/05/1997')
+funcaoImprime(10)
+catalogoFilmes({nome: 'duna', anoLancamento: 2021, genero: GENERO.ACAO})
+pessoasSelecionadas()
