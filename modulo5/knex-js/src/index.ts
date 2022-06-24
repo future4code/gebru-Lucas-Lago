@@ -1,4 +1,4 @@
-import express, {Express} from 'express'
+import express, {Express, Request, Response} from 'express'
 import cors from 'cors'
 import { AddressInfo } from "net";
 
@@ -7,12 +7,13 @@ const app: Express = express();
 app.use(express.json());
 app.use(cors());
 
-
-
-
-
-
-
+const getActorById = async (id: string): Promise<any> => {
+    const result = await connection.raw(`
+      SELECT * FROM Actor WHERE id = '${id}'
+    `)
+  
+      return result[0][0]
+  }
 
 
 
