@@ -8,6 +8,7 @@ app.post("/user/signup", async (req: Request, res: Response) => {
       if (!req.body.email || req.body.email.indexOf("@") === -1) {
         throw new Error("Invalid email");
       }
+      
   
       // Item c. Validação da senha
       if (!req.body.password || req.body.password.length < 6) {
